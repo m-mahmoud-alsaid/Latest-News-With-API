@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News</title>
+    <title>Daily News</title>
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Set CSS Files -->
@@ -18,7 +18,32 @@
 </head>
 
 <body>
-
+    <div class="home-page">
+        <div class="side-bar">
+            <h2>daily news</h2>
+            <ul>
+                <li class="active" data-view="headlines">
+                    <a href="#">top headlines</a>
+                </li>
+                <li data-view="sources">
+                    <a href="#">sources</a>
+                </li>
+                <li data-view="categories">
+                    <a href="#">categories</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="search">
+                    <input type="text" placeholder="Search..." />
+                </div>
+            </div>
+            <h1>top news</h1>
+            <div id="wrapper" class="wrapper"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
