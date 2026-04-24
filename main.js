@@ -23,17 +23,6 @@ async function fetchSources() {
     }
 }
 
-async function fetchCategories(category) {
-    try {
-        let response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=3e326e0c4086426b8ff6e1c537968f74`);
-        if (!response.ok) throw new Error('HTTP Error.');
-        let data = await response.json();
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 function clearWrapper() {
     wrapper.innerHTML = '';
 }
@@ -50,9 +39,11 @@ function headlineCard(headlines) {
         detailsDiv.classList.add('details');
         let infoDiv = document.createElement('div');
         infoDiv.classList.add('info');
-        let infoH3 = document.createElement('h3');
-        let infoH3Text = document.createTextNode(value.title || "title");
-        infoH3.appendChild(infoH3Text);
+        let infoA = document.createElement('a');
+        infoA.innerHTML = value.title || "title";
+        infoA.href = value.url;
+        infoA.target = '_blank';
+
         let infoP = document.createElement('p');
         let infoPText = document.createTextNode(value.description || 'no description');
         infoP.appendChild(infoPText);
@@ -66,7 +57,7 @@ function headlineCard(headlines) {
         let infoLastPText = document.createTextNode(value.publishedAt || 'unknown');
         infoLastP.appendChild(infoLastPText);
 
-        infoDiv.appendChild(infoH3);
+        infoDiv.appendChild(infoA);
         infoDiv.appendChild(infoP);
 
         infoTwoDiv.appendChild(infoFirstP);
@@ -83,8 +74,6 @@ function headlineCard(headlines) {
 }
 
 function sourcesCard(sources) {
-    console.log(sources.sources);
-
     for (let source of sources.sources) {
         let sourcesDiv = document.createElement('div');
         sourcesDiv.classList.add('sources');
@@ -138,11 +127,6 @@ document.querySelector('.side-bar').onclick = (e) => {
             pageTitle.innerHTML = 'sources';
             clearWrapper();
             fetchSources().then(data => sourcesCard(data));
-            break;
-        case 'categories':
-            pageTitle.innerHTML = 'categories';
-            clearWrapper();
-            fetchCategories().then(data => console.log(data));
             break;
     }
 };
