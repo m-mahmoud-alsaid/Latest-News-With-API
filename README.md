@@ -86,10 +86,10 @@ This project is built for learning purposes to practice:
 
 ## Screenshots
 
-![Project Image](assets/imageOne.png)
+![Project Image](imgs/imageOne.png)
 
-![Project Image](assets/imageTwo.png)
+![Project Image](imgs/imageTwo.png)
 
-![Project Image](assets/imageThree.png)
+![Project Image](imgs/imageThree.png)
 
-![Project Image](assets/imageFour.png)
+![Project Image](imgs/imageFour.png)
