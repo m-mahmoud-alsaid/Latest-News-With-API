@@ -83,3 +83,13 @@ This project is built for learning purposes to practice:
 * Working with APIs
 * Dynamic DOM manipulation
 * Building SPA-like behavior without frameworks
+
+## Screenshots
+
+![Project Image](assets/imageOne.png)
+
+![Project Image](assets/imageTwo.png)
+
+![Project Image](assets/imageThree.png)
+
+![Project Image](assets/imageFour.png)
